@@ -37,7 +37,7 @@ Rebuild the Codabench ZIP with `python build_zip.py`.
 3. **Adaptive labels** — a regularized Platt rescaling plus a per-benchmark
    offset (shrinkage applied online, α′=1, clip ±2.5). On unseen
    benchmarks, five labels are worth more than any offline modeling change
-   I tested (0.660 → 0.588 pooled leave-one-benchmark-out log-loss).
+   I tested (0.660 → 0.589 pooled leave-one-benchmark-out log-loss).
 
 A content-based NCF head (sentence embeddings → MLP logit correction,
 `variants/model_with_head.py` + `variants/ncf_head.pt`) improves held-out
