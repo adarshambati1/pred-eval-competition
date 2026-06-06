@@ -27,17 +27,17 @@ Rebuild the Codabench ZIP with `python build_zip.py`.
 ## Method summary
 
 1. **Hierarchical prior** — mean/count tables for five cell families, combined
-   by empirical-Bayes shrinkage (`(m·n + p·α)/(n + α)`, α=40) down the
+   by empirical-Bayes shrinkage (`(m·n + p·α)/(n + α)`, α=20) down the
    hierarchy, with subject ability and item-side difficulty fused additively
    in logit space (Rasch-style).
 2. **External curation** — 173 OpenVLM-leaderboard models matched to training
    subjects by normalized name; per-benchmark accuracies converted into
-   lookup cells for ~19 benchmarks absent from training. Validated by
+   lookup cells for ~16 benchmarks absent from training. Validated by
    deletion on shared benchmarks (e.g. mathvista 1.17 → 0.75 log-loss).
 3. **Adaptive labels** — a regularized Platt rescaling plus a per-benchmark
-   offset (shrinkage applied online, α′=0.5, clip ±2.5). On unseen
+   offset (shrinkage applied online, α′=1, clip ±2.5). On unseen
    benchmarks, five labels are worth more than any offline modeling change
-   we tested (0.660 → 0.586 pooled leave-one-benchmark-out log-loss).
+   we tested (0.660 → 0.588 pooled leave-one-benchmark-out log-loss).
 
 A content-based NCF head (sentence embeddings → MLP logit correction,
 `variants/model_with_head.py` + `variants/ncf_head.pt`) improves held-out
