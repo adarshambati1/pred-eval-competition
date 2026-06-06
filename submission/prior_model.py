@@ -1,6 +1,6 @@
 import math
 
-ALPHA = 40.0
+ALPHA = 20.0
 
 
 def _logit(p):

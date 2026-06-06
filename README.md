@@ -6,7 +6,7 @@ running the subject on the item (item cold-start).
 
 **Best leaderboard score: -0.60 negative log-loss** (organizer baseline: -0.79;
 reproduced across three runs). The final model contains **no neural network at
-test time**: a hierarchical shrinkage prior over accuracy statistics, 3,663
+test time**: a hierarchical shrinkage prior over accuracy statistics, 3,188
 (subject, benchmark) cells curated from the public OpenVLM leaderboard, and a
 per-benchmark calibration estimated online from the competition's five
 revealed labels per data category.

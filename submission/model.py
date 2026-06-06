@@ -54,7 +54,7 @@ def _fit_platt(labeled):
     by_bench = {}
     for z, y, ex in zip(zs, ys, labeled):
         by_bench.setdefault(ex.get("benchmark", ""), []).append((z, y))
-    alpha = 0.5
+    alpha = 1.0
     for bench, pairs in by_bench.items():
         n = len(pairs)
         p_hat = sum(_sigmoid(a * z + b) for z, _ in pairs) / n

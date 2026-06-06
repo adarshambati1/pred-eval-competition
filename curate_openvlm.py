@@ -59,9 +59,6 @@ NEW_BENCHMARKS = {
     "ScienceQA_TEST": ["scienceqa_test", "scienceqa"],
     "CCBench": ["ccbench"],
     "MMT-Bench_VAL": ["mmt-bench_val", "mmt-bench"],
-    "MMBench_TEST_CN_V11": ["mmbench_cn_v11"],
-    "MMBench_TEST_CN": ["mmbench_cn"],
-    "ScienceQA_VAL": ["scienceqa_val"],
     "MME": [],            # excluded: 0-2800 scale, not accuracy
     "OCRBench": ["ocrbench"],  # special: counts out of 1000 -> /10
     "LLaVABench": [],     # excluded: GPT-judged relative score
