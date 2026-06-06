@@ -68,12 +68,17 @@ on LOBO-regime examples (0.85). The shipped model therefore omits it.
 conda create -n pred-eval python=3.12 pandas numpy torch sentence-transformers huggingface_hub
 conda activate pred-eval
 
-python curate_openvlm.py --build     # leaderboard cells (needs curation/OpenVLM.json)
-python curate_openllm.py             # optional text-side cells
-python build_final_tables.py         # writes submission/lookup_tables.json
-python build_zip.py                  # Codabench ZIP
+./run_experiments.sh                 # everything: curation -> submission ZIP -> all ablations
+```
 
-python train_ncf.py                  # head + known-benchmark ablations (~10 min, Apple M-series)
+`run_experiments.sh` runs the full pipeline in order (13 stages, ~3 h total;
+each stage's output is tee'd to `logs/`). Stages 1--5 (~20 min) produce the
+final submission artifacts; stages 6--13 are the experiments behind every
+number in the report. Individual stages can be run directly, e.g.:
+
+```bash
+python build_final_tables.py         # submission/lookup_tables.json
+python train_ncf.py                  # head + known-benchmark ablations (~10 min)
 python lobo_eval.py                  # LOBO ablations
 ```
 
