@@ -44,7 +44,9 @@ A content-based NCF head (sentence embeddings → MLP logit correction,
 items of *known* benchmarks (0.519 → 0.462) but transfers negatively to
 unseen benchmarks (0.660 → 0.765 pooled LOBO; worse on 14/16) and scored
 worse on the live leaderboard twice — including when retrained exclusively
-on LOBO-regime examples (0.85). The shipped model therefore omits it.
+on LOBO-regime examples (0.85). The shipped model therefore omits it. To
+run the variant, copy `variants/model_with_head.py` into `submission/` as
+`model.py` alongside `ncf_head.pt` and `models.txt`.
 
 ## Experiments (repo root)
 
