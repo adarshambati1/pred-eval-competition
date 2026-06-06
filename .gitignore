@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+emb_cache/
+*.log
+my_submission*.zip
+curation/OpenVLM.json
+.DS_Store
